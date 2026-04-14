@@ -1,4 +1,4 @@
-def calculate_fare(km,type_of_vehicle,hrs):
+def calculate(km,type_of_vehicle,hrs):
     rates={
         'Economy': 10,
         'Premium': 15,
@@ -7,8 +7,7 @@ def calculate_fare(km,type_of_vehicle,hrs):
     try:
         rate=rates[type_of_vehicle]
     except KeyError:
-        return "Service Not Available"
-    
+        return "Sorry, Service Not Available"
     base_fare=km*rate
     if 17<=hrs<=20:
         base_fare*=1.5
@@ -20,7 +19,7 @@ try:
     if hrs<0 or hrs>23:
         print("Invalid hours. Please enter a value between 0 and 23.")
     else:
-        fare=calculate_fare(km,vechicle_type,hrs)
+        fare=calculate(km,vechicle_type,hrs)
         if isinstance(fare, str):
             print(fare)
         else:
@@ -30,4 +29,4 @@ try:
             print(f"Hours of Travel: {hrs}:00 hrs")
             print(f"Total Fare: ${fare:.2f}")
 except ValueError:
-    print("Invalid input. Please enter numeric values for distance and hours.")
+    print("Invalid input. Please enter numerical values for distance and hours.")
