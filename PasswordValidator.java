@@ -21,19 +21,19 @@ public class PasswordValidator {
                 hasDigit=true;
             }
         }
-        if(!hasUpper){
-            System.out.println("Password must contain at least one uppercase letter.");
-            isValid=false;
-        }
         if(!hasDigit){
             System.out.println("Password must contain at least one digit.");
+            isValid=false;
+        }
+        if(!hasUpper){
+            System.out.println("Password must contain at least one uppercase letter.");
             isValid=false;
         }
         if(isValid){
             System.out.println("Password is valid.");
             break;
         }else{
-            System.out.println("Please try again.");
+            System.out.println("Password is invalid, Please try again.");
         }
     }
     sc.close();
