@@ -5,8 +5,8 @@ public class PasswordValidator {
         while (true) {
             System.out.print("Enter Password: ");
             String password = sc.nextLine();
-            boolean hasUpper=false;
-            boolean hasDigit=false;
+            boolean Upper=false;
+            boolean Digit=false;
             boolean isValid =true;
         if(password.length()<8){
             System.out.println("Password must be at least 8 characters long.");
@@ -15,17 +15,17 @@ public class PasswordValidator {
         for(int i=0;i<password.length();i++){
             char ch = password.charAt(i);
             if(Character.isUpperCase(ch)){
-                hasUpper=true;
+                Upper=true;
             }
             if(Character.isDigit(ch)){
-                hasDigit=true;
+                Digit=true;
             }
         }
-        if(!hasDigit){
+        if(!Digit){
             System.out.println("Password must contain at least one digit.");
             isValid=false;
         }
-        if(!hasUpper){
+        if(!Upper){
             System.out.println("Password must contain at least one uppercase letter.");
             isValid=false;
         }
